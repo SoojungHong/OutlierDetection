@@ -125,6 +125,36 @@ import numpy as np
 plt.plot(univCodearr) #plot the array
 plt.show()
 
+#for example, check all rows in UniverseCode is 60
+univ60 = joined.loc[joined['UniverseCode'] == 60]
+univ60.head(10)
+univ60.info()
+
+
+productCdearr = univ60[['ProductCode']]
+productCdearr.head(10)
+productCdearr.max()
+productCdearr.min()
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+plt.plot(productCdearr) #plot the array
+plt.show()
+
+
+productIDdearr = univ60[['ProductID']]
+productIDdearr
+productIDdearr.max()
+productIDdearr.min()
+uniqueProductID = np.unique(productIDdearr)
+uniqueProductID 
+
+import matplotlib.pyplot as plt
+import numpy as np
+plt.plot(uniqueProductID) #plot the array
+plt.show()
+
 
 #check the range of productID
 
@@ -136,3 +166,8 @@ plt.show()
 # ToDo : need some text analysis
 # 'ProductFamilyCodeDesc' column contains useful description about products
 # combine all 'description' column and find out proper mappting 
+
+
+#----------------------------------------------------------------------------------------------------
+# Question : ProductCode is uniquely distinct in Universe? or it can belong to multiple Universe?
+
